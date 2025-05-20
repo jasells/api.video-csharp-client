@@ -1,15 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
-  
+
   <ItemGroup>
-    <Reference Include="ApiVideo">
-       <HintPath>..\src\bin\Debug\net5.0\ApiVideo.dll</HintPath>
-    </Reference>
+    <Compile Remove="Integration\**" />
+    <EmbeddedResource Remove="Integration\**" />
+    <None Remove="Integration\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +24,9 @@
 
   <ItemGroup>
     <Folder Include="Client\" />
-    <Folder Include="Integration\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\ApiVideo.csproj" />
   </ItemGroup>
 </Project>
