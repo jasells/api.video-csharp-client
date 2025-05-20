@@ -8,12 +8,15 @@ The version of the OpenAPI document: 1
 -->
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net5.0;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     
     <OutputType>Library</OutputType>
     <PackOnBuild>true</PackOnBuild>
-    <PackageId>BDev.ApiVideo</PackageId>    
-    <Authors>BDev</Authors>
+    <!--package metadata-->
+    <Title>XDev.$(ProjectName)</Title>
+    <Product>XDev.$(AssemblyName)</Product>
+    <PackageId>XDev.$(AssemblyName)</PackageId>
+    <Authors>XDevApps</Authors>
     <Description>api.video csharp API client</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/apivideo/api.video-csharp-client</PackageProjectUrl>
@@ -25,17 +28,38 @@ The version of the OpenAPI document: 1
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <AssemblyVersion>1.0.0</AssemblyVersion>
     <FileVersion>1.0.0</FileVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PackageVersion>0.0.101-localbuild</PackageVersion>
+    <DocumentationFile>bin\Debug\ApiVideo.xml</DocumentationFile>
+    <!--enable source link for Ci-builds-->
     <AllowedOutputExtensionsInPackageBuildOutputFolder>
       $(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb
     </AllowedOutputExtensionsInPackageBuildOutputFolder>
-    <PackageVersion>0.0.101-localbuild</PackageVersion>
+    <Deterministic>True</Deterministic>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+  
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DocumentationFile>bin\Debug\ApiVideo.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DocumentationFile>bin\Release\ApiVideo.xml</DocumentationFile>
   </PropertyGroup>
+  <!--set these as content so that they get packaged, but can also trigger XA0101 warning for Android. (false-positive)-->
+  <ItemGroup>
+    <Content Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </Content>
+    <Content Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </Content>
+    <Content Include="..\XDev-min.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </Content>
+  </ItemGroup>
   <PropertyGroup>
     <EnableDefaultItems>true</EnableDefaultItems>
   </PropertyGroup>
