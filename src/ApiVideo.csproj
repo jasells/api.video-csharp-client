@@ -19,7 +19,8 @@ The version of the OpenAPI document: 1
     <Authors>XDevApps</Authors>
     <Description>api.video csharp API client</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/apivideo/api.video-csharp-client</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/jasells/api.video-csharp-client</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/jasells/api.video-csharp-client</RepositoryUrl>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AssemblyTitle>api.video API client</AssemblyTitle>
     <Company>api.video</Company>
