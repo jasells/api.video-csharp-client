@@ -13,9 +13,13 @@ The version of the OpenAPI document: 1
     <OutputType>Library</OutputType>
     <PackOnBuild>true</PackOnBuild>
     <!--package metadata-->
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>XDev-min.png</PackageIcon>
     <Title>XDev.$(ProjectName)</Title>
     <Product>XDev.$(AssemblyName)</Product>
     <PackageId>XDev.$(AssemblyName)</PackageId>
+    <!--differentiate this assembly from original, while keeping namespaces the same-->
+    <AssemblyName>XDev.$(AssemblyName)</AssemblyName>
     <Authors>XDevApps</Authors>
     <Description>api.video csharp API client</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
