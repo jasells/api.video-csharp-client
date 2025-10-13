@@ -9,6 +9,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiVideoTests", "tests\ApiV
 		{47CD76E4-3F74-3BC2-A1BA-AF194D07E1FA} = {47CD76E4-3F74-3BC2-A1BA-AF194D07E1FA}
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiVideoTests.Integration", "tests\ApiVideoTests.Integration.csproj", "{11326841-DF9E-4225-BE6F-8502D313C5A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "files", "files", "{E1B4D671-AB81-47FC-B602-F1135948AF9B}"
+	ProjectSection(SolutionItems) = preProject
+		BuildInfo.txt = BuildInfo.txt
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,8 +31,15 @@ Global
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11326841-DF9E-4225-BE6F-8502D313C5A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11326841-DF9E-4225-BE6F-8502D313C5A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11326841-DF9E-4225-BE6F-8502D313C5A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11326841-DF9E-4225-BE6F-8502D313C5A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DBD51B3F-E658-4DE4-A300-4372A6BAA8A2}
 	EndGlobalSection
 EndGlobal

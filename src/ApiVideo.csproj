@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 api.video
 
 api.video is an API that encodes on the go to facilitate immediate playback, enhancing viewer streaming experiences across multiple devices and platforms. You can stream live or on-demand online videos within minutes.
@@ -8,42 +8,75 @@ The version of the OpenAPI document: 1
 -->
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net5.0;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     
     <OutputType>Library</OutputType>
     <PackOnBuild>true</PackOnBuild>
-    <PackageId>ApiVideo</PackageId>
-    <PackageVersion>1.6.7</PackageVersion>
-    <Authors>api.video</Authors>
+    <!--package metadata-->
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>XDev-min.png</PackageIcon>
+    <Title>XDev.$(ProjectName)</Title>
+    <Product>XDev.$(AssemblyName)</Product>
+    <PackageId>XDev.$(AssemblyName)</PackageId>
+    <!--differentiate this assembly from original, while keeping namespaces the same-->
+    <AssemblyName>XDev.$(AssemblyName)</AssemblyName>
+    <Authors>XDevApps</Authors>
     <Description>api.video csharp API client</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/apivideo/api.video-csharp-client</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/jasells/api.video-csharp-client</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/jasells/api.video-csharp-client</RepositoryUrl>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AssemblyTitle>api.video API client</AssemblyTitle>
     <Company>api.video</Company>
     <Product>ApiVideoApiClient</Product>
     <Copyright>No Copyright</Copyright>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <AssemblyVersion>1.0.0</AssemblyVersion>
     <FileVersion>1.0.0</FileVersion>
+    <PackageVersion>0.0.101-localbuild</PackageVersion>
+    <DocumentationFile>bin\Debug\ApiVideo.xml</DocumentationFile>
+    <!--enable source link for Ci-builds-->
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>
+      $(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb
+    </AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <Deterministic>True</Deterministic>
+    <DebugType>portable</DebugType>
   </PropertyGroup>
+
+  
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DocumentationFile>bin\Debug\ApiVideo.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DocumentationFile>bin\Release\ApiVideo.xml</DocumentationFile>
   </PropertyGroup>
+  <!--set these as content so that they get packaged, but can also trigger XA0101 warning for Android. (false-positive)-->
+  <ItemGroup>
+    <Content Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </Content>
+    <Content Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </Content>
+    <Content Include="..\XDev-min.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </Content>
+  </ItemGroup>
   <PropertyGroup>
     <EnableDefaultItems>true</EnableDefaultItems>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" PrivateAssets="all"/>
     <PackageReference Include="RestSharp" Version="111.2.0" />
-      <PackageReference Include="JsonSubTypes" Version="1.8.0" />
-      <PackageReference Include="NuGet.Build.Tasks.Pack">
+      <!--<PackageReference Include="JsonSubTypes" Version="1.8.0" />-->
+      <!--<PackageReference Include="NuGet.Build.Tasks.Pack" PrivateAssets="all">
         <Version>5.9.1</Version>
-      </PackageReference>
-    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+      </PackageReference>-->
+    <!--<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />-->
+    <!--<PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />-->
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 </Project>
